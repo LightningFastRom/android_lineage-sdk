@@ -88,9 +88,6 @@ public class LineageSettingsProviderDefaultsTest extends AndroidTestCase {
                 LineageSettings.Secure.ADVANCED_MODE,
                 "R.bool.def_advanced_mode"));
         SECURE_SETTINGS_DEFAULTS.add(new Setting(
-                LineageSettings.Secure.STATS_COLLECTION,
-                "R.bool.def_stats_collection"));
-        SECURE_SETTINGS_DEFAULTS.add(new Setting(
                 LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
                 "R.bool.def_lockscreen_visualizer"));
         SECURE_SETTINGS_DEFAULTS.add(new Setting(

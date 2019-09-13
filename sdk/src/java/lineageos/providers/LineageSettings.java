@@ -2848,20 +2848,6 @@ public final class LineageSettings {
         public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 
         /**
-         * Global stats collection
-         * @hide
-         */
-        public static final String STATS_COLLECTION = "stats_collection";
-
-        /**
-         * Whether the global stats collection setting has been successfully reported to server
-         * @hide
-         * @deprecated {@link org.lineageos.lineageparts.lineagestats.AnonymousStats} no longer uses this
-         */
-        @Deprecated
-        public static final String STATS_COLLECTION_REPORTED = "stats_collection_reported";
-
-        /**
          * Whether newly installed apps should run with privacy guard by default
          * @deprecated
          * @hide
@@ -3209,7 +3195,6 @@ public final class LineageSettings {
                 LineageSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
                 LineageSettings.Secure.KEYBOARD_BRIGHTNESS,
                 LineageSettings.Secure.POWER_MENU_ACTIONS,
-                LineageSettings.Secure.STATS_COLLECTION,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                 LineageSettings.Secure.NAVIGATION_RING_TARGETS[0],
                 LineageSettings.Secure.NAVIGATION_RING_TARGETS[1],
