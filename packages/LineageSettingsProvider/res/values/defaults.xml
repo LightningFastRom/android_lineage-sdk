@@ -32,9 +32,6 @@
     <!-- Default for LineageSettings.Secure.ADVANCED_MODE -->
     <bool name="def_advanced_mode">true</bool>
 
-    <!-- Default for LineageSettings.Secure.STATS_COLLECTION -->
-    <bool name="def_stats_collection">false</bool>
-
     <!-- Default for LineageSettings.System.STATUS_BAR_BATTERY_STYLE
          * 0: Display the battery as icon in portrait mode
          * 1: Display the battery as a circle
