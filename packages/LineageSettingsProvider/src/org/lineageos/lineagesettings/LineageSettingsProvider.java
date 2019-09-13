@@ -225,14 +225,6 @@ public class LineageSettingsProvider extends ContentProvider {
             else if (tableName.equals(LineageDatabaseHelper.LineageTableNames.TABLE_SECURE)) {
                 settingsValue = Settings.Secure.getStringForUser(contentResolver, settingsKey,
                         userId);
-                if (settingsValue != null && settingsKey.equals(LineageSettings.Secure.STATS_COLLECTION)
-                        && LineageSettings.Secure.getStringForUser(contentResolver, settingsKey, userId)
-                        != null) {
-                    // incorrect migration from YOG4P -> YOG7D failed to remove
-                    // Settings.Secure.STATS_COLLECTION after migration; so it may exist in both
-                    // providers; so if it exists in the new database, prefer it.
-                    continue;
-                }
             }
             else if (tableName.equals(LineageDatabaseHelper.LineageTableNames.TABLE_GLOBAL)) {
                 settingsValue = Settings.Global.getStringForUser(contentResolver, settingsKey,

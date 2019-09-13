@@ -2777,20 +2777,6 @@ public final class LineageSettings {
         public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 
         /**
-         * Global stats collection
-         * @hide
-         */
-        public static final String STATS_COLLECTION = "stats_collection";
-
-        /**
-         * Whether the global stats collection setting has been successfully reported to server
-         * @hide
-         * @deprecated {@link org.lineageos.lineageparts.lineagestats.AnonymousStats} no longer uses this
-         */
-        @Deprecated
-        public static final String STATS_COLLECTION_REPORTED = "stats_collection_reported";
-
-        /**
          * Whether newly installed apps should run with privacy guard by default
          * @hide
          */

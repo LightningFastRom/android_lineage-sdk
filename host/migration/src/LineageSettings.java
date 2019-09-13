@@ -805,12 +805,6 @@ public final class LineageSettings {
         public static final String QS_USE_MAIN_TILES = "sysui_qs_main_tiles";
 
         /**
-         * Global stats collection
-         * @hide
-         */
-        public static final String STATS_COLLECTION = "stats_collection";
-
-        /**
          * Boolean value whether to link ringtone and notification volume
          *
          * @hide
@@ -980,7 +974,6 @@ public final class LineageSettings {
                 LineageSettings.Secure.DEV_FORCE_SHOW_NAVBAR,
                 LineageSettings.Secure.KEYBOARD_BRIGHTNESS,
                 LineageSettings.Secure.POWER_MENU_ACTIONS,
-                LineageSettings.Secure.STATS_COLLECTION,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                 LineageSettings.Secure.QS_TILES,
                 LineageSettings.Secure.QS_USE_MAIN_TILES,
