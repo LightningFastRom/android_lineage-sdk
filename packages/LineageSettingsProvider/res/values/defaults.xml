@@ -22,7 +22,7 @@
          0. Off
          1. Right
          2. Left -->
-    <integer name="def_qs_quick_pulldown">0</integer>
+    <integer name="def_qs_quick_pulldown">2</integer>
 
     <!-- Default for LineageSettings.System.SYSTEM_PROFILES_ENABLED -->
     <bool name="def_profiles_enabled">true</bool>
@@ -41,7 +41,6 @@
          * 2: Display the battery as plain text
     -->
     <integer name="def_battery_style">0</integer>
-
 
     <!-- Default value of LineageSettings.System.ENABLE_FORWARD_LOOKUP -->
     <integer name="def_forward_lookup">1</integer>
@@ -114,6 +113,6 @@
          * 1: show the clock in the center
          * 2: show the clock in the left position (LTR)
     -->
-    <integer name="def_clock_position">2</integer>
+    <integer name="def_clock_position">1</integer>
 
 </resources>
