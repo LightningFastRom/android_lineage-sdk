@@ -2055,6 +2055,7 @@ public final class LineageSettings {
                 LineageSettings.System.BACK_WAKE_SCREEN,
                 LineageSettings.System.MENU_WAKE_SCREEN,
                 LineageSettings.System.VOLUME_WAKE_SCREEN,
+                LineageSettings.Secure.POWER_MENU_ACTIONS,
                 LineageSettings.System.KEY_MENU_ACTION,
                 LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION,
                 LineageSettings.System.KEY_ASSIST_ACTION,
