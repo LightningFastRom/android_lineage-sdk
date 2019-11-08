@@ -23,7 +23,7 @@
          0. Off
          1. Right
          2. Left -->
-    <integer name="def_qs_quick_pulldown">2</integer>
+    <integer name="def_qs_quick_pulldown">1</integer>
 
     <!-- Default for LineageSettings.System.SYSTEM_PROFILES_ENABLED -->
     <bool name="def_profiles_enabled">true</bool>
@@ -36,7 +36,6 @@
     <!-- Default for LineageSettings.System.STATUS_BAR_BATTERY_STYLE
          * 0: Display the battery as icon in portrait mode
          * 1: Display the battery as a circle
-         * 2: Display the battery as plain text
     -->
     <integer name="def_battery_style">0</integer>
 
@@ -112,5 +111,11 @@
          * 2: show the clock in the left position (LTR)
     -->
     <integer name="def_clock_position">1</integer>
+
+    <!-- Default clock position
+         * 0: hide the am pm in the right position (LTR)
+         * 1: show the am pm in the right position (LTR)
+    -->
+    <integer name="def_enabled_am_pm">1</integer>
 
 </resources>
