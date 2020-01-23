@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2015 The CyanogenMod Project
                (C) 2017 The LineageOS Project
+               (C) 2017-2018 The LightningFastRom Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +17,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="lineageos_system_label">نظام LineageOS</string>
+    <string name="lineageos_system_label">نظام LightningFastRom</string>
     <string name="permlab_modifyProfiles">تعديل الملفات التعريفية للنظام</string>
     <string name="permdesc_modifyProfiles">السماح للتطبيق بتعديل الملفات التعريفية للنظام.</string>
     <string name="permlab_useHardwareFramework">استخدام إطار عمل الجهاز</string>
@@ -91,9 +92,9 @@
     <string name="permlab_manageRemotePrefs">إعدادات التحكم عن بعد</string>
     <string name="permdesc_manageRemotePrefs">السماح للتطبيق بإدارة الإعدادات عن بعد</string>
     <string name="build_date">تاريخ الإنشاء</string>
-    <string name="lineage_api_level">مستوى LineageOS API</string>
-    <string name="lineage_updates">تحديثات LineageOS</string>
-    <string name="lineage_version">إصدار LineageOS</string>
+    <string name="lineage_api_level">مستوى LightningFastRom API</string>
+    <string name="lineage_updates">تحديثات LightningFastRom</string>
+    <string name="lineage_version">إصدار LightningFastRom</string>
     <string name="lineage_vendor_security_patch">‏مستوى رمز تصحيح أمان المورد</string>
     <string name="unknown">غير معروف</string>
     <string name="app_killed_message">تم إنهاء التطبيق</string>
