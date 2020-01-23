@@ -2990,13 +2990,6 @@ public final class LineageSettings {
         public static final String QS_LOCATION_ADVANCED = "qs_location_advanced";
 
         /**
-         * Whether to show the keyguard visualizer.
-         * Boolean setting. 0 = off, 1 = on.
-         * @hide
-         */
-        public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
-
-        /**
          * Whether to show media art on lockscreen
          * Boolean setting. 0 = off, 1 = on.
          * @hide
@@ -3215,7 +3208,6 @@ public final class LineageSettings {
                 LineageSettings.Secure.PERFORMANCE_PROFILE,
                 LineageSettings.Secure.APP_PERFORMANCE_PROFILES_ENABLED,
                 LineageSettings.Secure.QS_LOCATION_ADVANCED,
-                LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED,
                 LineageSettings.Secure.LOCK_PASS_TO_SECURITY_VIEW
         };
 
