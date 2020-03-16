@@ -240,8 +240,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
                 try {
                     stmt = db.compileStatement("INSERT INTO global(name,value)"
                             + " VALUES(?,?);");
-                    loadIntegerSetting(stmt, LineageSettings.Global.WEATHER_TEMPERATURE_UNIT,
-                            R.integer.def_temperature_unit);
                     db.setTransactionSuccessful();
                 } finally {
                     if (stmt != null) stmt.close();
@@ -602,9 +600,6 @@ public class LineageDatabaseHelper extends SQLiteOpenHelper{
             loadStringSetting(stmt,
                     LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE,
                     R.string.def_power_notifications_ringtone);
-
-            loadIntegerSetting(stmt, LineageSettings.Global.WEATHER_TEMPERATURE_UNIT,
-                    R.integer.def_temperature_unit);
         } finally {
             if (stmt != null) stmt.close();
         }

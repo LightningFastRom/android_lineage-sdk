@@ -937,7 +937,7 @@ public final class LineageSettings {
         public static final Validator ZEN_PRIORITY_VIBRATION_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 2);
 
-        /**
+         /**
          * Display style of AM/PM next to clock in status bar
          * 0: Normal display (Eclair stock)
          * 1: Small display (Froyo stock)
@@ -1623,16 +1623,6 @@ public final class LineageSettings {
                 sBooleanValidator;
 
         /**
-         * Boolean value on whether to show weather in the statusbar
-         * 0 = 0ff, 1 = on
-         */
-        public static final String STATUS_BAR_SHOW_WEATHER = "status_bar_show_weather";
-
-        /** @hide */
-        public static final Validator STATUS_BAR_SHOW_WEATHER_VALIDATOR =
-                sBooleanValidator;
-
-        /**
          * Show search bar in recents
          * 0 = Off, 1 = on
          */
@@ -1738,26 +1728,6 @@ public final class LineageSettings {
         /** @hide */
         public static final Validator QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR =
                 new InclusiveIntegerRangeValidator(0, 2);
-
-        /**
-         * Whether to control brightness from status bar
-         * 0 = 0ff, 1 = on
-         */
-        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
-
-        /** @hide */
-        public static final Validator STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR =
-                sBooleanValidator;
-
-        /**
-         * Whether or not volume button music controls should be enabled to seek media tracks
-         * 0 = 0ff, 1 = on
-         */
-        public static final String VOLBTN_MUSIC_CONTROLS = "volbtn_music_controls";
-
-        /** @hide */
-        public static final Validator VOLBTN_MUSIC_CONTROLS_VALIDATOR =
-                sBooleanValidator;
 
         /**
          * Use EdgeGesture Service for system gestures in PhoneWindowManager
@@ -2159,7 +2129,6 @@ public final class LineageSettings {
                 LineageSettings.System.DISPLAY_COLOR_ADJUSTMENT,
                 LineageSettings.System.LIVE_DISPLAY_HINTED,
                 LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
-                LineageSettings.System.STATUS_BAR_SHOW_WEATHER,
                 LineageSettings.System.RECENTS_SHOW_SEARCH_BAR,
                 LineageSettings.System.NAVBAR_LEFT_IN_LANDSCAPE,
                 LineageSettings.System.T9_SEARCH_INPUT_LOCALE,
@@ -2168,8 +2137,6 @@ public final class LineageSettings {
                 LineageSettings.System.SHOW_ALARM_ICON,
                 LineageSettings.System.STATUS_BAR_IME_SWITCHER,
                 LineageSettings.System.QS_SHOW_BRIGHTNESS_SLIDER,
-                LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
-                LineageSettings.System.VOLBTN_MUSIC_CONTROLS,
                 LineageSettings.System.USE_EDGE_SERVICE_FOR_GESTURES,
                 LineageSettings.System.STATUS_BAR_NOTIF_COUNT,
                 LineageSettings.System.CALL_RECORDING_FORMAT,
@@ -2301,7 +2268,6 @@ public final class LineageSettings {
             VALIDATORS.put(LIVE_DISPLAY_HINTED, LIVE_DISPLAY_HINTED_VALIDATOR);
             VALIDATORS.put(TRUST_INTERFACE_HINTED, TRUST_INTERFACE_HINTED_VALIDATOR);
             VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE, DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_SHOW_WEATHER, STATUS_BAR_SHOW_WEATHER_VALIDATOR);
             VALIDATORS.put(RECENTS_SHOW_SEARCH_BAR, RECENTS_SHOW_SEARCH_BAR_VALIDATOR);
             VALIDATORS.put(NAVBAR_LEFT_IN_LANDSCAPE, NAVBAR_LEFT_IN_LANDSCAPE_VALIDATOR);
             VALIDATORS.put(T9_SEARCH_INPUT_LOCALE, T9_SEARCH_INPUT_LOCALE_VALIDATOR);
@@ -2314,9 +2280,6 @@ public final class LineageSettings {
             VALIDATORS.put(STATUS_BAR_QUICK_QS_PULLDOWN,
                     STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR);
             VALIDATORS.put(QS_SHOW_BRIGHTNESS_SLIDER, QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL,
-                    STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
-            VALIDATORS.put(VOLBTN_MUSIC_CONTROLS, VOLBTN_MUSIC_CONTROLS_VALIDATOR);
             VALIDATORS.put(USE_EDGE_SERVICE_FOR_GESTURES,
                     USE_EDGE_SERVICE_FOR_GESTURES_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_NOTIF_COUNT, STATUS_BAR_NOTIF_COUNT_VALIDATOR);
@@ -3026,13 +2989,6 @@ public final class LineageSettings {
         public static final String VIBRATOR_INTENSITY = "vibrator_intensity";
 
         /**
-         * Current active & enabled Weather Provider Service
-         *
-         * @hide
-         */
-        public static final String WEATHER_PROVIDER_SERVICE = "weather_provider_service";
-
-        /**
          * Set to 0 when we enter the Lineage Setup Wizard.
          * Set to 1 when we exit the Lineage Setup Wizard.
          *
@@ -3638,14 +3594,6 @@ public final class LineageSettings {
          * @hide
          */
         public static final String WIFI_AUTO_PRIORITIES_CONFIGURATION = "wifi_auto_priority";
-
-        /**
-         * Global temperature unit in which the weather data will be reported
-         * Valid values are:
-         * <p>{@link lineageos.providers.WeatherContract.WeatherColumns.TempUnit#CELSIUS}</p>
-         * <p>{@link lineageos.providers.WeatherContract.WeatherColumns.TempUnit#FAHRENHEIT}</p>
-         */
-        public static final String WEATHER_TEMPERATURE_UNIT = "weather_temperature_unit";
 
         /**
          * Developer options - Navigation Bar show switch
