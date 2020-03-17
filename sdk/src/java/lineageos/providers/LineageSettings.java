@@ -938,17 +938,15 @@ public final class LineageSettings {
                 new InclusiveIntegerRangeValidator(0, 2);
 
          /**
-         * Display style of AM/PM next to clock in status bar
-         * 0: Normal display (Eclair stock)
-         * 1: Small display (Froyo stock)
-         * 2: No display (Gingerbread/ICS stock)
-         * default: 2
+         * Toggle of AM/PM next to clock in status bar
+         * false: No display (Gingerbread/ICS stock)
+         * true: Normal display (Eclair stock)
+         * default: true
          */
         public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
 
         /** @hide */
-        public static final Validator STATUS_BAR_AM_PM_VALIDATOR =
-                new InclusiveIntegerRangeValidator(0, 2);
+        public static final Validator STATUS_BAR_AM_PM_VALIDATOR = sBooleanValidator;
 
         /**
          * Display style of the status bar battery information

@@ -115,4 +115,10 @@
 	 -->
 	<integer name="def_clock_position">1</integer>
 	
+	<!-- Toggle of AM/PM next to clock in status bar
+	* false: No display (Gingerbread/ICS stock)
+	* true: Normal display (Eclair stock)
+	* default: true
+	-->
+	<bool name="def_show_am_pm">true</bool>
 </resources>
