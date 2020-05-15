@@ -74,4 +74,5 @@ public class LineageMetricsLogger extends MetricsLogger {
     public static final int TILE_AOD = BASE + 46;
     public static final int TILE_POWERSHARE = BASE + 47;
     public static final int DERPZONE = BASE + 48;
+    public static final int TILE_SCREEN_RECORD = BASE + 49;
 }
