@@ -168,7 +168,10 @@
 
     <!-- Full screen aspect ratio -->
     <java-symbol type="bool" name="config_haveHigherAspectRatioScreen" />
-
+	
+	<!-- Hole Punch Camera Position -->
+	<java-symbol type="integer" name="config_holePunchCameraPosition" />
+	
     <!-- Notch -->
     <java-symbol type="bool" name="config_haveNotch" />
 </resources>
