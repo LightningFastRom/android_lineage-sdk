@@ -266,4 +266,7 @@
     <!-- Whether device needs to wait for Qualcomm MPCTL service to start
          before setting power profiles on boot. -->
     <bool name="config_waitForMpctlOnBoot">false</bool>
+
+    <!-- Whether device is One Plus. -->
+    <bool name="config_hasOnePlusHapticMotor">false</bool>
 </resources>

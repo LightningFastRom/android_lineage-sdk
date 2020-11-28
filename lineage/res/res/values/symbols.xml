@@ -174,4 +174,7 @@
 	
     <!-- Notch -->
     <java-symbol type="bool" name="config_haveNotch" />
+
+    <!-- Whether device is One Plus. -->
+    <java-symbol type="bool" name="config_hasOnePlusHapticMotor" />
 </resources>
