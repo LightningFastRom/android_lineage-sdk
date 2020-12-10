@@ -76,4 +76,5 @@ public class LineageMetricsLogger extends MetricsLogger {
     public static final int DERPZONE = BASE + 48;
     public static final int TILE_SCREEN_RECORD = BASE + 49;
     public static final int TILE_DATA_SWITCH = BASE + 50;
+    public static final int TILE_REBOOT = BASE + 51;
 }
