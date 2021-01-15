@@ -2987,6 +2987,48 @@ public final class LineageSettings {
         public static final String VIBRATOR_INTENSITY = "vibrator_intensity";
 
         /**
+         * Network traffic indicator mode
+         * 0 = Don't show network traffic indicator
+         * 1 = Display up-stream traffic only
+         * 2 = Display down-stream traffic only
+         * 3 = Display both up- and down-stream traffic
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_MODE = "network_traffic_mode";
+
+        /** @hide */
+        public static final Validator NETWORK_TRAFFIC_MODE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 3);
+
+        /**
+         * Whether or not to hide the network traffic indicator when there is no activity
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
+
+        /** @hide */
+        public static final Validator NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR = sBooleanValidator;
+
+        /**
+         * Measurement unit preference for network traffic
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_UNITS = "network_traffic_units";
+
+        /** @hide */
+        public static final Validator NETWORK_TRAFFIC_UNITS_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 3);
+
+        /**
+         * Whether or not to show measurement units in the network traffic indiciator
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_SHOW_UNITS = "network_traffic_show_units";
+
+        /** @hide */
+        public static final Validator NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR = sBooleanValidator;
+
+        /**
          * Set to 0 when we enter the Lineage Setup Wizard.
          * Set to 1 when we exit the Lineage Setup Wizard.
          *

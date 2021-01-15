@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.database.ContentObserver;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.PorterDuff;
@@ -53,8 +54,10 @@ import org.lineageos.platform.internal.R;
 
 import java.util.HashMap;
 
-public class NetworkTraffic extends TextView {
+public class NetworkTraffic extends TextView implements View.OnClickListener {
     private static final String TAG = "NetworkTraffic";
+
+    OnClickListener _wrappedOnClickListener;
 
     private static final boolean DEBUG = false;
 
@@ -63,10 +66,10 @@ public class NetworkTraffic extends TextView {
     private static final int MODE_DOWNSTREAM_ONLY = 2;
     private static final int MODE_UPSTREAM_AND_DOWNSTREAM = 3;
 
-    private static final int MESSAGE_TYPE_PERIODIC_REFRESH = 0;
-    private static final int MESSAGE_TYPE_UPDATE_VIEW = 1;
-    private static final int MESSAGE_TYPE_ADD_NETWORK = 2;
-    private static final int MESSAGE_TYPE_REMOVE_NETWORK = 3;
+    private static final int MESSAGE_TYPE_PERIODIC_REFRESH = 1;
+    private static final int MESSAGE_TYPE_UPDATE_VIEW = 2;
+    private static final int MESSAGE_TYPE_ADD_NETWORK = 3;
+    private static final int MESSAGE_TYPE_REMOVE_NETWORK = 4;
 
     private static final int REFRESH_INTERVAL = 2000;
 
@@ -82,7 +85,6 @@ public class NetworkTraffic extends TextView {
     private static final long AUTOHIDE_THRESHOLD_MEGABYTES = 80;
 
     private int mMode = MODE_DISABLED;
-    private boolean mNetworkTrafficIsVisible;
     private long mTxKbps;
     private long mRxKbps;
     private long mLastTxBytes;
@@ -94,8 +96,6 @@ public class NetworkTraffic extends TextView {
     private long mAutoHideThreshold;
     private int mUnits;
     private boolean mShowUnits;
-    private int mDarkModeFillColor;
-    private int mLightModeFillColor;
     private int mIconTint = Color.WHITE;
     private SettingsObserver mObserver;
     private Drawable mDrawable;
@@ -119,6 +119,8 @@ public class NetworkTraffic extends TextView {
 
     public NetworkTraffic(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+		
+		super.setOnClickListener(this);
 
         mNetworkManagementService = INetworkManagementService.Stub.asInterface(
                     ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE));
@@ -126,8 +128,6 @@ public class NetworkTraffic extends TextView {
         final Resources resources = getResources();
         mTextSizeSingle = resources.getDimensionPixelSize(R.dimen.net_traffic_single_text_size);
         mTextSizeMulti = resources.getDimensionPixelSize(R.dimen.net_traffic_multi_text_size);
-
-        mNetworkTrafficIsVisible = false;
 
         mObserver = new SettingsObserver(mTrafficHandler);
 
@@ -137,44 +137,22 @@ public class NetworkTraffic extends TextView {
                 .addCapability(NetworkCapabilities.NET_CAPABILITY_NOT_VPN)
                 .build();
         mConnectivityManager.registerNetworkCallback(request, mNetworkCallback);
+		mContext.registerReceiver(mIntentReceiver,
+                new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        mObserver.observe();
+        updateSettings();
+		Log.d(TAG, "Startting UP"); 
     }
 
-    private LineageStatusBarItem.DarkReceiver mDarkReceiver =
-            new LineageStatusBarItem.DarkReceiver() {
-        public void onDarkChanged(Rect area, float darkIntensity, int tint) {
-            mIconTint = tint;
-            setTextColor(mIconTint);
-            updateTrafficDrawableColor();
-        }
-        public void setFillColors(int darkColor, int lightColor) {
-            mDarkModeFillColor = darkColor;
-            mLightModeFillColor = lightColor;
-        }
-    };
-
-    private LineageStatusBarItem.VisibilityReceiver mVisibilityReceiver =
-            new LineageStatusBarItem.VisibilityReceiver() {
-        public void onVisibilityChanged(boolean isVisible) {
-            if (mNetworkTrafficIsVisible != isVisible) {
-                mNetworkTrafficIsVisible = isVisible;
-                updateViewState();
-            }
-        }
-    };
-
-    @Override
+    /*@Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-
-        LineageStatusBarItem.Manager manager =
-                LineageStatusBarItem.findManager((View) this);
-        manager.addDarkReceiver(mDarkReceiver);
-        manager.addVisibilityReceiver(mVisibilityReceiver);
 
         mContext.registerReceiver(mIntentReceiver,
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
         mObserver.observe();
         updateSettings();
+		Log.d(TAG, "Attached To The Window");
     }
 
     @Override
@@ -182,9 +160,20 @@ public class NetworkTraffic extends TextView {
         super.onDetachedFromWindow();
         mContext.unregisterReceiver(mIntentReceiver);
         mObserver.unobserve();
+		Log.d(TAG, "Detached To The Window");
+    }*/
+	
+	@Override
+    public void onClick(View v) {
+        Log.d(TAG, "Clicked");
     }
 
-    private Handler mTrafficHandler = new Handler() {
+    @Override
+    public void setOnClickListener(OnClickListener l) {
+        _wrappedOnClickListener = l;
+    }
+    
+	private Handler mTrafficHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -306,7 +295,7 @@ public class NetworkTraffic extends TextView {
 
             // Schedule periodic refresh
             mTrafficHandler.removeMessages(MESSAGE_TYPE_PERIODIC_REFRESH);
-            if (enabled && mNetworkTrafficIsVisible) {
+            if (enabled) {
                 mTrafficHandler.sendEmptyMessageDelayed(MESSAGE_TYPE_PERIODIC_REFRESH,
                         REFRESH_INTERVAL);
             }
