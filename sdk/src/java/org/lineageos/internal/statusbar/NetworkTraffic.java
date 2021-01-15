@@ -16,8 +16,10 @@
 
 package org.lineageos.internal.statusbar;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -144,6 +146,7 @@ public class NetworkTraffic extends TextView implements View.OnClickListener {
 		Log.d(TAG, "Startting UP"); 
     }
 
+    /* TODO: Makr it Batter */
     /*@Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -165,6 +168,12 @@ public class NetworkTraffic extends TextView implements View.OnClickListener {
 	
 	@Override
     public void onClick(View v) {
+		
+		/* TODO: Make */
+		/*Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setComponent(new ComponentName(
+                                "org.lineageos.lineageparts","statusbar.StatusBarSettings "));
+        mContext.startActivity(intent);*/
         Log.d(TAG, "Clicked");
     }
 
