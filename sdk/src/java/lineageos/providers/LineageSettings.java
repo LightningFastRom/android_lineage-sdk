@@ -2935,20 +2935,6 @@ public final class LineageSettings {
         public static final String QS_LOCATION_ADVANCED = "qs_location_advanced";
 
         /**
-         * Whether to show media art on lockscreen
-         * Boolean setting. 0 = off, 1 = on.
-         * @hide
-         */
-        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
-
-        /**
-         * Whether to have translucent background on lockscreen notifications
-         * @hide
-         */
-        public static final String LOCKSCREEN_TRANSLUCENT_NOTIFICATIONS_BG_ENABLED
-                = "lockscreen_translucent_notifications_bg_enabled";
-
-        /**
          * Whether to activate double tap to sleep on keyguard
          * Boolean setting. 0 = off, 1 = on.
          * @hide
